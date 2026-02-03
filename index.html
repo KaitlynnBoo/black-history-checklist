@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black History Month Checklist</title>
+    <p class="subtitle">Free interactive checklist · Save your progress · Add your own goals</p>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas Neue&family=Righteous&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red: #E63946;
+            --yellow: #F4C430;
+            --green: #2a9d2e;
+            --black: #1a1a1a;
+            --cream: #FFF8F0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #ffe8d6 100%);
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .header-bg {
+            background: #1a1a1a;
+            padding: 0;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Kente-inspired horizontal stripe base */
+        .kente-stripe-top {
+            width: 100%;
+            height: 18px;
+            display: flex;
+        }
+
+        .kente-stripe-top .s1 {
+            flex: 3;
+            background: #E63946;
+        }
+
+        .kente-stripe-top .s2 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-top .s3 {
+            flex: 2;
+            background: #bf9209;
+        }
+
+        .kente-stripe-top .s4 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-top .s5 {
+            flex: 2;
+            background: #2a9d2e;
+        }
+
+        .kente-stripe-top .s6 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-top .s7 {
+            flex: 3;
+            background: #E63946;
+        }
+
+        .kente-stripe-top .s8 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-top .s9 {
+            flex: 2;
+            background: #bf9209;
+        }
+
+        .kente-stripe-top .s10 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-top .s11 {
+            flex: 2;
+            background: #2a9d2e;
+        }
+
+        .kente-stripe-top .s12 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-top .s13 {
+            flex: 3;
+            background: #E63946;
+        }
+
+        .kente-stripe-bottom {
+            width: 100%;
+            height: 18px;
+            display: flex;
+        }
+
+        .kente-stripe-bottom .s1 {
+            flex: 2;
+            background: #2a9d2e;
+        }
+
+        .kente-stripe-bottom .s2 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-bottom .s3 {
+            flex: 3;
+            background: #bf9209;
+        }
+
+        .kente-stripe-bottom .s4 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-bottom .s5 {
+            flex: 2;
+            background: #E63946;
+        }
+
+        .kente-stripe-bottom .s6 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-bottom .s7 {
+            flex: 3;
+            background: #2a9d2e;
+        }
+
+        .kente-stripe-bottom .s8 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-bottom .s9 {
+            flex: 2;
+            background: #bf9209;
+        }
+
+        .kente-stripe-bottom .s10 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-bottom .s11 {
+            flex: 2;
+            background: #E63946;
+        }
+
+        .kente-stripe-bottom .s12 {
+            flex: 1;
+            background: #1a1a1a;
+        }
+
+        .kente-stripe-bottom .s13 {
+            flex: 3;
+            background: #2a9d2e;
+        }
+
+        /* Main body area of the banner */
+        .header-body {
+            background: #1a1a1a;
+            padding: 2.8rem 2rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Left & right Adinkra-style decorative SVGs */
+        .header-body .adinkra-left,
+        .header-body .adinkra-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+            height: 120px;
+            opacity: 0.18;
+        }
+
+        .header-body .adinkra-left {
+            left: 18px;
+        }
+
+        .header-body .adinkra-right {
+            right: 18px;
+        }
+
+        h1 {
+            font-family: 'Anton';
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: white;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 15px rgba(161, 159, 159, 0.56);
+
+
+        }
+
+        .highlight {
+            color: var(--yellow);
+        }
+
+        .subtitle {
+            font-family: 'Bebas Neue';
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--cream);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .progress-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            animation: slideUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green), var(--yellow));
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 20px;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-weight: 600;
+            color: var(--black);
+            font-size: 1.1rem;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .category {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.6s ease-out backwards;
+        }
+
+        .category:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .category:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .category:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .category:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .category:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .category:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid;
+        }
+
+        .category:nth-child(1) .category-header {
+            border-color: var(--red);
+        }
+
+        .category:nth-child(2) .category-header {
+            border-color: var(--yellow);
+        }
+
+        .category:nth-child(3) .category-header {
+            border-color: var(--green);
+        }
+
+        .category:nth-child(4) .category-header {
+            border-color: var(--red);
+        }
+
+        .category:nth-child(5) .category-header {
+            border-color: var(--yellow);
+        }
+
+        .category:nth-child(6) .category-header {
+            border-color: var(--green);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .category:nth-child(1) .category-icon {
+            background: rgba(230, 57, 70, 0.1);
+        }
+
+        .category:nth-child(2) .category-icon {
+            background: rgba(244, 196, 48, 0.1);
+        }
+
+        .category:nth-child(3) .category-icon {
+            background: rgba(42, 157, 143, 0.1);
+        }
+
+        .category:nth-child(4) .category-icon {
+            background: rgba(230, 57, 70, 0.1);
+        }
+
+        .category:nth-child(5) .category-icon {
+            background: rgba(244, 196, 48, 0.1);
+        }
+
+        .category:nth-child(6) .category-icon {
+            background: rgba(42, 157, 143, 0.1);
+        }
+
+        .category h2 {
+            font-family: 'Bebas Neue';
+            font-size: 1.5rem;
+            color: var(--black);
+            letter-spacing: 1px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s ease;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item:hover {
+            background: rgba(0, 0, 0, 0.02);
+            padding-left: 0.5rem;
+            margin-left: -0.5rem;
+            border-radius: 8px;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .checkbox:hover {
+            border-color: var(--green);
+            transform: scale(1.1);
+        }
+
+        .checkbox.checked {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+            line-height: 1.6;
+            color: #333;
+            transition: color 0.2s ease;
+        }
+
+        .checklist-item.completed label {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        /* ── Add-item row ── */
+        .add-item-row {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+            padding-top: 1rem;
+            border-top: 2px dashed #e0e0e0;
+        }
+
+        .add-item-row input {
+            flex: 1;
+            padding: 0.65rem 0.85rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            color: #333;
+            background: #fafafa;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            outline: none;
+        }
+
+        .add-item-row input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.18);
+            background: #fff;
+        }
+
+        .add-item-row input::placeholder {
+            color: #aaa;
+        }
+
+        .btn-add {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 10px;
+            background: var(--green);
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .btn-add:hover {
+            background: #238a81;
+            transform: scale(1.08);
+        }
+
+        .btn-add:active {
+            transform: scale(0.95);
+        }
+
+        /* ── Delete button on each item ── */
+        .btn-delete {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            margin-top: 2px;
+            border: none;
+            background: transparent;
+            color: #ccc;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s, background 0.2s;
+            opacity: 0;
+        }
+
+        .checklist-item:hover .btn-delete {
+            opacity: 1;
+        }
+
+        .btn-delete:hover {
+            color: var(--red);
+            background: rgba(230, 57, 70, 0.1);
+        }
+
+        /* ── pop-in for newly added items ── */
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-8px) scale(0.96);
+            }
+
+            60% {
+                transform: translateY(2px) scale(1.01);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .checklist-item.new {
+            animation: popIn 0.3s ease-out forwards;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .header-bg {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                padding: 0;
+            }
+
+            .header-bg,
+            .progress-container,
+            .add-item-row,
+            .btn-delete {
+                display: none !important;
+            }
+
+            .category {
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .checkbox {
+                border: 2px solid #000 !important;
+            }
+
+            .checklist-item label {
+                color: #000 !important;
+            }
+
+            footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-bg">
+                <!-- Top Kente stripe band -->
+                <div class="kente-stripe-top">
+                    <div class="s1"></div>
+                    <div class="s2"></div>
+                    <div class="s3"></div>
+                    <div class="s4"></div>
+                    <div class="s5"></div>
+                    <div class="s6"></div>
+                    <div class="s7"></div>
+                    <div class="s8"></div>
+                    <div class="s9"></div>
+                    <div class="s10"></div>
+                    <div class="s11"></div>
+                    <div class="s12"></div>
+                    <div class="s13"></div>
+                </div>
+
+                <!-- Main content area -->
+                <div class="header-body">
+                    <!-- Left Adinkra (Gye Nyame – Supremacy of God) -->
+                    <svg class="adinkra-left" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="60" cy="52" rx="34" ry="40" stroke="#F4C430" stroke-width="5" fill="none" />
+                        <ellipse cx="60" cy="52" rx="18" ry="22" stroke="#F4C430" stroke-width="4" fill="none" />
+                        <line x1="60" y1="10" x2="60" y2="0" stroke="#F4C430" stroke-width="5" stroke-linecap="round" />
+                        <line x1="60" y1="94" x2="60" y2="120" stroke="#F4C430" stroke-width="5"
+                            stroke-linecap="round" />
+                        <line x1="30" y1="100" x2="60" y2="94" stroke="#F4C430" stroke-width="3.5"
+                            stroke-linecap="round" />
+                        <line x1="90" y1="100" x2="60" y2="94" stroke="#F4C430" stroke-width="3.5"
+                            stroke-linecap="round" />
+                    </svg>
+
+                    <!-- Right Adinkra (Sankofa – Go back and get it) -->
+                    <svg class="adinkra-right" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M60 95 C30 95, 15 75, 15 58 C15 40, 30 28, 48 32 C52 33, 55 36, 55 40 C55 46, 48 50, 42 48"
+                            stroke="#F4C430" stroke-width="5" fill="none" stroke-linecap="round" />
+                        <path
+                            d="M60 95 C90 95, 105 75, 105 58 C105 40, 90 28, 72 32 C68 33, 65 36, 65 40 C65 46, 72 50, 78 48"
+                            stroke="#F4C430" stroke-width="5" fill="none" stroke-linecap="round" />
+                        <circle cx="60" cy="30" r="10" stroke="#F4C430" stroke-width="4.5" fill="none" />
+                        <line x1="60" y1="105" x2="60" y2="120" stroke="#F4C430" stroke-width="5"
+                            stroke-linecap="round" />
+                    </svg>
+
+                    <h1>Black <span class="highlight">History</span> Month</h1>
+                    <div class="gold-line"></div>
+                    <p class="subtitle">Know the Past · Shape the Future</p>
+                </div>
+
+                <!-- Bottom Kente stripe band -->
+                <div class="kente-stripe-bottom">
+                    <div class="s1"></div>
+                    <div class="s2"></div>
+                    <div class="s3"></div>
+                    <div class="s4"></div>
+                    <div class="s5"></div>
+                    <div class="s6"></div>
+                    <div class="s7"></div>
+                    <div class="s8"></div>
+                    <div class="s9"></div>
+                    <div class="s10"></div>
+                    <div class="s11"></div>
+                    <div class="s12"></div>
+                    <div class="s13"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text" id="progressText">0 of 62 completed</div>
+        </div>
+
+        <div class="categories">
+            <div class="category" data-category="learn">
+                <div class="category-header">
+                    <h2>Learn & Discover</h2>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Read a book written by a Black author</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Discover the story of a Black inventor and their impact</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Explore Black communities and culture in other countries</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Learn about Carter G. Woodson, the "Father of Black History"</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Discover why and how Black History Month began</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Study Black politicians during the Reconstruction Era</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Learn about resistance and slave rebellions throughout history</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Understand the Reconstruction Era and its lasting impact</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Explore the history and legacy of HBCUs</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Celebrate the contributions of Black dancers and choreographers</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Discover something new about a Black historical figure</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Trace the African diaspora and the transatlantic slave trade</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Learn about an influential Black figure from outside the U.S.</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Read a biography or memoir by or about a Black leader</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Celebrate Black scientists, scholars, and innovators</label>
+                </div>
+                <!-- add-item row -->
+                <div class="add-item-row">
+                    <input type="text" placeholder="Add your own…" onkeydown="if(event.key==='Enter')addItem(this)">
+                    <button class="btn-add" onclick="addItem(this.previousElementSibling)">+</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-header" data-category="watch-listen">
+                    <h2>Watch & Listen</h2>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Watch a powerful speech or interview with a Black leader</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Listen to an inspiring speech from Black history</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Watch a film directed by a Black filmmaker</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Enjoy a movie starring Black actors and actresses</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Watch your favorite Black comedian perform</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Watch a Black-created or Black-centered TV show</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Watch classic Soul Train or Def Comedy Jam videos</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Watch documentary footage of Black civil rights leaders</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Listen to music from Black artists across different genres</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Listen to "Lift Every Voice and Sing" (the Black National Anthem)</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Read poetry by Black poets</label>
+                </div>
+                <!-- add-item row -->
+                <div class="add-item-row">
+                    <input type="text" placeholder="Add your own…" onkeydown="if(event.key==='Enter')addItem(this)">
+                    <button class="btn-add" onclick="addItem(this.previousElementSibling)">+</button>
+                </div>
+            </div>
+
+
+
+            <div class="category" data-category="community-connection">
+                <div class="category-header">
+                    <h2>Community & Connection</h2>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Have a conversation with a Black elder about their experiences</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Spend quality time with your family</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Shop at and support a Black-owned business</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Research local Black organizations and their missions</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Attend a Black History Month event or program</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Learn about Black leaders in your local community</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Support your favorite Black content creator or artist</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Enjoy a meal at a Black-owned restaurant</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Give back through volunteering or donations</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Visit an HBCU campus (in-person or virtually)</label>
+                </div>
+                <!-- add-item row -->
+                <div class="add-item-row">
+                    <input type="text" placeholder="Add your own…" onkeydown="if(event.key==='Enter')addItem(this)">
+                    <button class="btn-add" onclick="addItem(this.previousElementSibling)">+</button>
+                </div>
+            </div>
+
+            <div class="category" data-category="reflect-discuss">
+                <div class="category-header">
+                    <h2>Reflect & Discuss</h2>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Share what you've learned about Black history with others</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Teach children about Black history and culture</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Express gratitude to those who've supported you</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Reflect on what you want to change or improve</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Educate yourself about racism, prejudice, and discrimination</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Have honest, open conversations about race and identity</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Speak up against racism and prejudice</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Stay informed about current issues affecting Black communities</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Know your rights, laws, and how to protect yourself</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Wish a MF would</label>
+                </div>
+                <!-- add-item row -->
+                <div class="add-item-row">
+                    <input type="text" placeholder="Add your own…" onkeydown="if(event.key==='Enter')addItem(this)">
+                    <button class="btn-add" onclick="addItem(this.previousElementSibling)">+</button>
+                </div>
+            </div>
+
+            <div class="category" data-category="experience-create">
+                <div class="category-header">
+                    <h2>Experience & Create</h2>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Look through old family photos and share stories</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Visit a Black history museum or cultural exhibit</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Take a Black art tour (virtual or in-person)</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Cook soul food or your favorite family recipe</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Dress up and wear something that makes you feel confident</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Express yourself creatively. Dance, write, draw, sing, or create</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Explore historical photos of Black people across time</label>
+                </div>
+                <!-- add-item row -->
+                <div class="add-item-row">
+                    <input type="text" placeholder="Add your own…" onkeydown="if(event.key==='Enter')addItem(this)">
+                    <button class="btn-add" onclick="addItem(this.previousElementSibling)">+</button>
+                </div>
+            </div>
+
+            <div class="category" data-category="celebrate-embrace">
+                <div class="category-header">
+                    <h2>Celebrate & Embrace</h2>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Go outside and have some fun</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Support movements for Black history and advancement</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Share what you love most about Black culture</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Celebrate your favorite memories with friends and family</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Buy books by Black authors for the children in your life</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Celebrate accomplishments, yours and your loved ones</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Start planning to celebrate Juneteenth</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Allow yourself to feel, cry, forgive, accept, express</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Honor the freedoms your ancestors fought for</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Show love and embrace Black people in your community</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>REST!! Give yourself permission to pause</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Enjoy time alone and practice self-care</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Think positively about Black people and their contributions</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Prioritize your physical and mental health</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Affirm that being Black is beautiful and powerful</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Stand firm in your dignity and self-worth</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Remember that love sustains and connects us all</label>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <label>Know that we belong here and there's enough joy for everyone</label>
+                </div>
+                <!-- add-item row -->
+                <div class="add-item-row">
+                    <input type="text" placeholder="Add your own…" onkeydown="if(event.key==='Enter')addItem(this)">
+                    <button class="btn-add" onclick="addItem(this.previousElementSibling)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            // ── helpers ──────────────────────────────────────────────
+            const KEY_PREFIX = 'bhm_checklist_';
+
+            function storageKey(catId) { return KEY_PREFIX + catId; }
+
+            function loadCat(catId) {
+                try { return JSON.parse(localStorage.getItem(storageKey(catId))) || {}; }
+                catch { return {}; }
+            }
+
+            function saveCat(catId) {
+                const data = {};
+                const catEl = document.querySelector(`[data-category="${catId}"]`);
+                catEl.querySelectorAll('.checklist-item').forEach(item => {
+                    const label = item.querySelector('label').textContent;
+                    const checked = item.querySelector('.checkbox').classList.contains('checked');
+                    const custom = item.dataset.custom === 'true';
+                    data[label] = { checked, custom };
+                });
+                localStorage.setItem(storageKey(catId), JSON.stringify(data));
+            }
+
+            // ── progress ─────────────────────────────────────────────
+            function updateProgress() {
+                const all = document.querySelectorAll('.checklist-item');
+                const done = [...all].filter(i => i.classList.contains('completed')).length;
+                const pct = (done / all.length) * 100;
+                document.getElementById('progressBar').style.width = pct + '%';
+                document.getElementById('progressText').textContent = `${done} of ${all.length} completed`;
+            }
+
+            // ── toggle (works on any item, old or new) ───────────────
+            function wireItem(item, catId) {
+                const checkbox = item.querySelector('.checkbox');
+                const label = item.querySelector('label');
+
+                const toggle = () => {
+                    const on = checkbox.classList.toggle('checked');
+                    item.classList.toggle('completed', on);
+                    saveCat(catId);
+                    updateProgress();
+                };
+
+                checkbox.addEventListener('click', toggle);
+                label.addEventListener('click', toggle);
+            }
+
+            // ── add item ─────────────────────────────────────────────
+            window.addItem = function (input) {
+                const text = input.value.trim();
+                if (!text) return;
+
+                const row = input.closest('.add-item-row');
+                const catEl = row.closest('.category');
+                const catId = catEl.dataset.category;
+
+                // build the new checklist-item node
+                const item = document.createElement('div');
+                item.className = 'checklist-item new';
+                item.dataset.custom = 'true';
+                item.innerHTML = `
+                <div class="checkbox"></div>
+                <label>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</label>
+                <button class="btn-delete" onclick="deleteItem(this)">✕</button>`;
+
+                // insert BEFORE the add-item row
+                catEl.insertBefore(item, row);
+
+                // wire toggle & save
+                wireItem(item, catId);
+                saveCat(catId);
+                updateProgress();
+
+                // clear input & remove animation class after it plays
+                input.value = '';
+                setTimeout(() => item.classList.remove('new'), 300);
+            };
+
+            // ── delete item ──────────────────────────────────────────
+            window.deleteItem = function (btn) {
+                const item = btn.closest('.checklist-item');
+                const catEl = item.closest('.category');
+                const catId = catEl.dataset.category;
+
+                item.remove();
+                saveCat(catId);
+                updateProgress();
+            };
+
+            // ── on page load: restore custom items & checked states ──
+            document.querySelectorAll('.category').forEach(catEl => {
+                const catId = catEl.dataset.category;
+                const saved = loadCat(catId);
+
+                // 1) restore checked state on default (non-custom) items
+                catEl.querySelectorAll('.checklist-item').forEach(item => {
+                    const label = item.querySelector('label').textContent;
+                    if (saved[label] && saved[label].checked) {
+                        item.querySelector('.checkbox').classList.add('checked');
+                        item.classList.add('completed');
+                    }
+                    wireItem(item, catId);
+                });
+
+                // 2) re-create any previously added custom items
+                const row = catEl.querySelector('.add-item-row');
+                Object.entries(saved).forEach(([label, info]) => {
+                    if (!info.custom) return;                         // skip defaults
+                    const item = document.createElement('div');
+                    item.className = 'checklist-item';
+                    item.dataset.custom = 'true';
+                    item.innerHTML = `
+                    <div class="checkbox${info.checked ? ' checked' : ''}"></div>
+                    <label>${label.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</label>
+                    <button class="btn-delete" onclick="deleteItem(this)">✕</button>`;
+                    if (info.checked) item.classList.add('completed');
+                    catEl.insertBefore(item, row);
+                    wireItem(item, catId);
+                });
+            });
+
+            updateProgress();
+        })();
+    </script>
+    <div style="text-align:center; margin: 1rem 0;">
+        <button onclick="window.print()" style="
+        background:#1a1a1a;
+        color:#fff;
+        border:none;
+        padding:0.6rem 1rem;
+        border-radius:999px;
+        font-size:0.9rem;
+        cursor:pointer;
+      ">
+            Print / Save as PDF
+        </button>
+    </div>
+
+</body>
+<footer style="text-align:center; margin-top:3rem; color:#666; font-size:0.9rem;">
+    Made with love, reflection, and intention ✊🏾 -- Kaitlyn
+</footer>
+
+</html>
