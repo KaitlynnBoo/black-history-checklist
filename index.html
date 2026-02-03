@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black History Month Checklist</title>
     <p class="subtitle">Free interactive checklist · Save your progress · Add your own goals</p>
+    <p style="text-align:center; color:#777; font-size:0.85rem;">
+          For the best experience, open in your phone’s main browser (Safari/Chrome).
+    </p>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas Neue&family=Righteous&family=Inter:wght@400;500;700&display=swap"
         rel="stylesheet">
@@ -1087,12 +1091,14 @@
     <script>
         (function () {
             // ── helpers ──────────────────────────────────────────────
-            const KEY_PREFIX = 'bhm_checklist_';
+            // This makes keys unique per site path
+            const KEY_PREFIX = location.pathname + '_checklist_';
+
 
             function storageKey(catId) { return KEY_PREFIX + catId; }
 
             function loadCat(catId) {
-                try { return JSON.parse(localStorage.getItem(storageKey(catId))) || {}; }
+                try { return JSON.parse(localStorage.getItem(KEY_PREFIX + catId + '_' + itemId)) || {}; }
                 catch { return {}; }
             }
 
@@ -1105,16 +1111,17 @@
                     const custom = item.dataset.custom === 'true';
                     data[label] = { checked, custom };
                 });
-                localStorage.setItem(storageKey(catId), JSON.stringify(data));
+                localStorage.setItem(KEY_PREFIX + catId + '_' + itemId, value);
+
             }
 
             // ── progress ─────────────────────────────────────────────
             function updateProgress() {
-                const all = document.querySelectorAll('.checklist-item');
-                const done = [...all].filter(i => i.classList.contains('completed')).length;
-                const pct = (done / all.length) * 100;
-                document.getElementById('progressBar').style.width = pct + '%';
-                document.getElementById('progressText').textContent = `${done} of ${all.length} completed`;
+              const all = document.querySelectorAll('.checklist-item .checkbox');
+              const done = document.querySelectorAll('.checklist-item.completed').length;
+              const pct = (done / all.length) * 100 || 0;
+              document.getElementById('progressBar').style.width = pct + '%';
+              document.getElementById('progressText').textContent = `${done} of ${all.length} completed`;
             }
 
             // ── toggle (works on any item, old or new) ───────────────
